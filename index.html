@@ -26,14 +26,20 @@
     <![endif]-->
   </head>
   <body>
+	<!-- Initiate Map -->
 	<div id="map" class="map-pane interface "></div>
-
-
+	
+	<!-- Temporary buttons -->
 	<div id="database-button"></div>
 	<div id="layer-button"></div>
 	<div id="stats-button"></div>
-
-    <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
+	
+	<!-- Menu -->
+	<a href="#">
+	<span id="upload-thing" class="glyphicon glyphicon-upload" aria-hidden="true"></span>
+	</a>
+    
+	<!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
     <script src="js/jquery-1.11.1.min.js"></script>
     <!-- Include all compiled plugins (below), or include individual files as needed -->
     <script src="js/bootstrap.min.js"></script>
@@ -70,6 +76,16 @@
 		$('<div></div>').attr('id','stats-div').appendTo('body');
 		} else {
 		} });
+	
+	$('#upload-thing').click(function() {
+		if($("#upload-div").length==0) {
+		$('<div id="upload-div"><input id="uploadFile" placeholder="Choose File" disabled="disabled" /><div class="fileUpload btn btn-primary"><span>Upload</span><input id="uploadBtn" type="file" class="upload" /></div></div>').appendTo('body');
+		} else {
+		} });
+		
+	document.getElementById("uploadBtn").onchange = function () {
+    document.getElementById("uploadFile").value = this.value;
+};
 		
 	</script>
   </body>
