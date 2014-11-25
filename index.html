@@ -1,7 +1,10 @@
 <!DOCTYPE html>
 <html lang="en">
   <head>
-    <meta charset="utf-8">
+	<style>
+
+	</style>
+	<meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>QuikMap</title>
@@ -23,17 +26,19 @@
     <![endif]-->
   </head>
   <body>
-	<div class="container-fluid top-interface">
-    <div class="col-sm-2 layer-window interface "></div>
-	<div id="map" class="col-sm-8 map-pane interface "></div>
-	<div class="col-sm-2 stats-window interface "></div>
-	</div>
-	<div class="database-window backend "></div>
+	<div id="map" class="map-pane interface "></div>
+
+
+	<div id="database-button"></div>
+	<div id="layer-button"></div>
+	<div id="stats-button"></div>
 
     <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
     <script src="js/jquery-1.11.1.min.js"></script>
     <!-- Include all compiled plugins (below), or include individual files as needed -->
     <script src="js/bootstrap.min.js"></script>
+	
+	<!-- Leaflet map -->
 	<script>
 	// initialize the map on the "map" div with a given center and zoom
 	var map = L.map('map', {
@@ -44,6 +49,28 @@
     attribution: '&copy; <a href="http://osm.org/copyright">OpenStreetMap</a> contributors'
 	}).addTo(map); 
 	
+	</script>
+	
+	<!-- Button functionality -->
+	<script>
+	$('#database-button').click(function() {
+		if($("#database-div").length==0) {
+		$('<div></div>').attr('id','database-div').appendTo('body');
+		} else {
+		} });
+		
+	$('#layer-button').click(function() {
+		if($("#layer-div").length==0) {
+		$('<div></div>').attr('id','layer-div').appendTo('body');
+		} else {
+		} });
+		
+	$('#stats-button').click(function() {
+		if($("#stats-div").length==0) {
+		$('<div></div>').attr('id','stats-div').appendTo('body');
+		} else {
+		} });
+		
 	</script>
   </body>
 </html>
